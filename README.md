@@ -39,7 +39,7 @@ PHP
 
         function getName($id) {
             if ($id==1) {
-                return "Jonh";
+                return "John";
             }
         }
 
@@ -47,7 +47,7 @@ PHP
 
         function getName($id) {
             if ($id==1) {
-                return "Jonh";
+                return "John";
             } else {
                return;
             }
@@ -57,7 +57,7 @@ PHP
 
         function getName($id) {
             if ($id==1) {
-                return "Jonh";
+                return "John";
             } else {
                 return false;
             }
