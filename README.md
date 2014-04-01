@@ -9,59 +9,69 @@ PHP
 
     *Плохо:*
 
-        $statement = $pdo->query(
-            "
-            SELECT name
-            FROM Users
-            WHERE sex='$userSex'
-            "
-        );
+    ```php
+    $statement = $pdo->query(
+        "
+        SELECT name
+        FROM Users
+        WHERE sex='$userSex'
+        "
+    );
+    ```
 
     *Хорошо:*
 
-        $statement = $pdo->prepare(
-            "
-            SELECT name
-            FROM Users
-            WHERE sex=:userSex
-            "
-        )
-            ->execute(
-                array(
-                    ":userSex"=>$userSex
-                )
-            );
+    ```php
+    $statement = $pdo->prepare(
+        "
+        SELECT name
+        FROM Users
+        WHERE sex=:userSex
+        "
+    )
+        ->execute(
+            array(
+                ":userSex"=>$userSex
+            )
+        );
+    ```
 
 *   Если функция возвращает значение, то она должна возвращать его в любой ситуации (undefined не допускается).
     Если возвращать нечего, то можно вернуть False как признак ошибки.
 
     *Плохо:*
 
-        function getName($id) {
-            if ($id==1) {
-                return "John";
-            }
+    ```php
+    function getName($id) {
+        if ($id==1) {
+            return "John";
         }
+    }
+    ```
 
     *Плохо:*
 
-        function getName($id) {
-            if ($id==1) {
-                return "John";
-            } else {
-               return;
-            }
+    ```php
+    function getName($id) {
+        if ($id==1) {
+            return "John";
+        } else {
+           return;
         }
+    }
+    ```
 
     *Хорошо:*
 
-        function getName($id) {
-            if ($id==1) {
-                return "John";
-            } else {
-                return false;
-            }
+    ```php
+    function getName($id) {
+        if ($id==1) {
+            return "John";
+        } else {
+            return false;
         }
+    }
+    ```
 
 *   Код при работе не должен производить ворнингов.
 *   При разработке в PhpStorm необходимо максимально вычищать ошибки на которые указывает инспекция кода.
@@ -72,16 +82,20 @@ PHP
 
     *Плохо:*
 
-        $db_config=sprintf('mysql:dbname=%s;host=%s',$_CONFIG['db']['name'],$_CONFIG['db']['host']);
-
-    *Хорошо:*
-
-        $db_config='mysql:dbname='.$_CONFIG['db']['name'].';host='.$_CONFIG['db']['host'];
+    ```php
+    $db_config=sprintf('mysql:dbname=%s;host=%s',$_CONFIG['db']['name'],$_CONFIG['db']['host']);
+    ```
 
     *Хорошо:*
 
     ```php
-        $db_config='mysql:dbname=${_CONFIG['db']['name']};host=${_CONFIG['db']['host']}';
+    $db_config='mysql:dbname='.$_CONFIG['db']['name'].';host='.$_CONFIG['db']['host'];
+    ```
+
+    *Хорошо:*
+
+    ```php
+    $db_config='mysql:dbname=${_CONFIG['db']['name']};host=${_CONFIG['db']['host']}';
     ```
 
 JS
