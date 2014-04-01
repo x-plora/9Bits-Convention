@@ -31,7 +31,7 @@ PHP
     )
         ->execute(
             array(
-                ":userSex"=>$userSex
+                ":userSex" => $userSex
             )
         );
     ```
