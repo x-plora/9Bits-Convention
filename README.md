@@ -56,7 +56,7 @@ PHP
         if ($id==1) {
             return "John";
         } else {
-           return;
+            return;
         }
     }
     ```
@@ -95,7 +95,7 @@ PHP
     *Хорошо:*
 
     ```php
-    $db_config='mysql:dbname=${_CONFIG['db']['name']};host=${_CONFIG['db']['host']}';
+    $db_config="mysql:dbname={$_CONFIG['db']['name']};host={$_CONFIG['db']['host']}";
     ```
 
 JS
