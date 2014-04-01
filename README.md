@@ -80,7 +80,9 @@ PHP
 
     *Хорошо:*
 
+    ```php
         $db_config='mysql:dbname=${_CONFIG['db']['name']};host=${_CONFIG['db']['host']}';
+    ```
 
 JS
 ---
