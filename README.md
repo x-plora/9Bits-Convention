@@ -43,7 +43,7 @@ PHP
             }
         }
 
-
+    *Плохо:*
 
         function getName($id) {
             if ($id==1) {
