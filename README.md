@@ -43,6 +43,15 @@ PHP
             }
         }
 
+
+        function getName($id) {
+            if ($id==1) {
+                return "Jonh";
+            } else {
+               return;
+            }
+        }
+
     *Хорошо:*
 
         function getName($id) {
